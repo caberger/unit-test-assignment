@@ -1,5 +1,5 @@
 name: Test and report project
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} running Unit Tests 🚀
 on: [push]
 jobs:
   test:
@@ -18,3 +18,9 @@ jobs:
 
       - name: Coverage Report
         run: mvn -B jacoco:report
+      
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage-Report
+          path: target/site/jacoco
+
