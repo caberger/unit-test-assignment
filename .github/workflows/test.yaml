@@ -1,6 +1,8 @@
 name: Test and report project
 run-name: ${{ github.actor }} running Unit Tests 🚀
-on: [push]
+on:
+  - push
+  - workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
